@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import randomColor from "randomcolor";
 
 import breedsService from "../../services/breedsService";
 import breedService from "../../services/breedsService";
@@ -20,7 +21,9 @@ class DogsList extends Component {
             return breedService
               .getBreedImages(breed)
               .then(response => {
-                return { name: breed, value: response.data.message.length };
+                const color = randomColor();
+                const ammount = response.data.message.length;
+                return { name: breed, value: ammount, color };
               })
               .catch(error => {
                 console.log(error);
@@ -37,7 +40,6 @@ class DogsList extends Component {
   }
 
   getPicturePercent = breedsArray => {
-
     const totalImages = breedsArray
       .map(breed => Object.values(breed)[1])
       .reduce((amount, acc) => amount + acc);

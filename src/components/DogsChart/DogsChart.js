@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { PieChart, Pie } from "recharts";
+import { PieChart, Pie, Cell } from "recharts";
 
 const renderActiveShape = props => {
   const RADIAN = Math.PI / 180;
@@ -55,6 +55,7 @@ class DogsChart extends PureComponent {
   };
 
   render() {
+    console.log(this.props)
     const width = window.innerWidth;
     const height = window.innerHeight;
     const radius = (Math.min(width, height) * 0.65) / 2;
@@ -68,10 +69,15 @@ class DogsChart extends PureComponent {
           data={this.props.breeds}
           cx={width / 2}
           cy={height / 2}
-          fill="#8884d8"
           onMouseEnter={this.onPieEnter}
           outerRadius={radius}
-        />
+        >
+          {
+            this.props.breeds.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={entry.color} />)
+            )
+          }
+        </Pie>
       </PieChart>
     );
   }
