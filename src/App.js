@@ -1,12 +1,12 @@
 import React from "react";
 
-import Layout from './components/Layout/Layout';
+import DogsList from './components/DogsList/DogsList';
 import "./App.scss";
 
 function App() {
   return (
     <div className="App">
-      <Layout></Layout>
+      <DogsList></DogsList>
     </div>
   );
 }
