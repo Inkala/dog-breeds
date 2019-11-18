@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import randomColor from "randomcolor";
 
 import breedsService from "../../services/breedsService";
-import breedService from "../../services/breedsService";
-
 import DogsChart from "../DogsChart/DogsChart";
+import ChartInfo from "../ChartInfo/ChartInfo";
 
 class DogsList extends Component {
   state = {
@@ -18,7 +17,7 @@ class DogsList extends Component {
         const breedsArray = Object.keys(response.data.message);
         Promise.all(
           breedsArray.map(breed => {
-            return breedService
+            return breedsService
               .getBreedImages(breed)
               .then(response => {
                 const color = randomColor();
@@ -55,10 +54,10 @@ class DogsList extends Component {
   render() {
     const { BreedsData } = this.state;
     return (
-      <section>
-        <h1>Dogs Chart</h1>
+      <main>
         {BreedsData.length ? <DogsChart breeds={BreedsData} /> : null}
-      </section>
+        <ChartInfo breeds={BreedsData}></ChartInfo>
+      </main>
     );
   }
 }

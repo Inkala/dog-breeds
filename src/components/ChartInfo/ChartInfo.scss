@@ -1,0 +1,72 @@
+#chart-info {
+  position: absolute;
+  top: 10%;
+  right: 25px;
+  font-size: 0.75em;
+  height: 80vh;
+  overflow: scroll;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 6px #00000036;
+  
+  div {
+    margin-right: 5px;
+  }
+
+  ul {
+    padding-left: 20px;
+    
+    li {
+      list-style: none;
+      line-height: 1.35;
+      display: grid;
+      grid-template-columns: 20px 2fr 1fr;
+      align-items: center;
+    }
+  }
+
+  .breed-name {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 935px) {
+  #chart-info {
+    position: inherit;
+    width: 90%;
+    margin: 0 auto;
+    
+    ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      
+      li {
+        padding: 0 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 745px) {
+  #chart-info {
+    width: 80%;
+    margin-top: -100px;
+    ul {
+      grid-template-columns: 1fr 1fr;
+      
+      li {
+        padding: 0 20px;
+      }
+    }
+  }
+  .dogs-chart {
+    display: flex;
+    justify-content: center;
+
+    .recharts-surface {
+      height: 80% !important;
+      overflow: overlay;
+    }
+  }
+}

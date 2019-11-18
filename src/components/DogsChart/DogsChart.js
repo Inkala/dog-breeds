@@ -1,6 +1,8 @@
 import React, { PureComponent } from "react";
 import { PieChart, Pie, Cell } from "recharts";
 
+import "./DogsChart.scss";
+
 const renderActiveShape = props => {
   const RADIAN = Math.PI / 180;
   const { cx, cy, midAngle, outerRadius, fill, name, value } = props;
@@ -15,7 +17,7 @@ const renderActiveShape = props => {
   const textAnchor = cos >= 0 ? "start" : "end";
 
   return (
-    <>
+    <g>
       <path
         d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`}
         stroke={fill}
@@ -39,7 +41,7 @@ const renderActiveShape = props => {
       >
         {`${value}%`}
       </text>
-    </>
+    </g>
   );
 };
 
@@ -55,28 +57,26 @@ class DogsChart extends PureComponent {
   };
 
   render() {
-    console.log(this.props)
+    console.log(this.props);
     const width = window.innerWidth;
     const height = window.innerHeight;
     const radius = (Math.min(width, height) * 0.65) / 2;
 
     return (
-      <PieChart width={width} height={height}>
+      <PieChart className="dogs-chart" width={width} height={height * 0.85}>
         <Pie
           dataKey="value"
           activeIndex={this.state.activeIndex}
           activeShape={renderActiveShape}
           data={this.props.breeds}
           cx={width / 2}
-          cy={height / 2}
+          cy={height / 2.5}
           onMouseEnter={this.onPieEnter}
           outerRadius={radius}
         >
-          {
-            this.props.breeds.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={entry.color} />)
-            )
-          }
+          {this.props.breeds.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={entry.color} />
+          ))}
         </Pie>
       </PieChart>
     );
