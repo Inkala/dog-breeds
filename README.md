@@ -1,68 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About this test
 
-## Available Scripts
+To see this test working, clone the repository, type `npm install` from the root folder and then type `npm start`.
 
-In the project directory, you can run:
+### Technologies used
 
-### `yarn start`
+For this test I chose to use [React](https://reactjs.org/) for it is not only the JavaScript tool in which I have more knowledge and experience, but also because it is the one used in Strands.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+For the chart I used [Recharts](http://recharts.org/en-US/) because it is build with and for React, and D3 which was my first option, but  I found Recharts was much more simple and good enough for a small pie chart like the one in this test.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+I also used [randomcolors](https://www.npmjs.com/package/randomcolor). An npm package to give random colors to the elements in the chart.
 
-### `yarn test`
+### Success
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+All the functionalities that were added to the app are working as expected. I also decided to make the label in the pie chart only appear on hover because it was not very readable when they all showed at the same time. I also added a list of all the breeds with the percentage in the side for reference.
 
-### `yarn build`
+### Challenges
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I had never used a library for data visualization so I had to look through the documentation and understand how it worked. Many things are taken from the documentation and examples.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### What to improve
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+For an app with one single view, I don't think that Redux is necessary, but if I had more time, I would have liked to implement it.
 
-### `yarn eject`
+I would have also liked to add the second chart with the top 10 breeds. For that I would have sorted the array I created with the data by picture percentage, take the first 10 and sort it again alphabetically.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+For this second chart, I would have probably left the labels visible all the time.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I would have added some tests, but since I haven't done that since I first learned it, I would have had to do some research to remember how to do it and would need more time.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+And I would have liked to connect the breeds list and the chart so when you click a breed in the list, the label in the Pie Chart appears. For this I would try to set the state with the active index, the same way it is done for the pie chart.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Additional notes
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+All working code is in the branch Master, but I will create some new branches because I want to implement Redux and the other things I mentioned. I will not merge this new branches with master.
