@@ -18,17 +18,22 @@ body {
   line-height: 147%;
 }
 
-h1 {
-  text-align: center;
-  text-shadow: 
-    3px 2px 0px #FFEEA5, 
-    5px 4px 0px #AA74D3, 
-    7px 6px 0px #143ED3,
-    9px 8px 0px #EF8F7F,
-    11px 10px 0px #AECC39;
+.title {
+  background-color: #161616;
+  padding:20px 0 25px;
 }
 
-/* ---- layout ---- */
+h1 {
+  text-align: center;
+  margin: 0;
+  color: #FFF;
+  text-shadow: 
+    4px 2px 0px #1e7089,
+    6px 4px 0px #4e0589, 
+    8px 6px 0px #BC533C,
+}
+
+/* ---- Media Queries ---- */
 
 @media (min-width: 768px) {
   .container {

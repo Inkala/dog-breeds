@@ -1,7 +1,7 @@
 #chart-info {
   position: absolute;
-  top: 10%;
-  right: 25px;
+  top: 15%;
+  right: 5%;
   font-size: 0.75em;
   height: 80vh;
   overflow: scroll;
@@ -35,11 +35,13 @@
   #chart-info {
     position: inherit;
     width: 90%;
-    margin: 0 auto;
-    
+    margin: 0 auto 20px;
+    height: auto;
+
     ul {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      margin: 20px 0 15px;
       
       li {
         padding: 0 20px;
