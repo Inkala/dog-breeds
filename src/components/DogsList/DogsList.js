@@ -38,6 +38,7 @@ class DogsList extends Component {
       });
   }
 
+  // Get total ammout of pictures to calculate percentage
   getPicturePercent = breedsArray => {
     const totalImages = breedsArray
       .map(breed => Object.values(breed)[1])

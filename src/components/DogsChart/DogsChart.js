@@ -4,6 +4,7 @@ import { PieChart, Pie, Cell } from "recharts";
 import "./DogsChart.scss";
 
 const renderActiveShape = props => {
+  // From http://recharts.org/en-US/examples
   const RADIAN = Math.PI / 180;
   const { cx, cy, midAngle, outerRadius, fill, name, value } = props;
   const sin = Math.sin(-RADIAN * midAngle);
