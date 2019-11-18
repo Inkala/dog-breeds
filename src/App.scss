@@ -3,7 +3,9 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -16,8 +18,14 @@ body {
   line-height: 147%;
 }
 
-h1, h2, h3, p {
-  margin: 0;
+h1 {
+  text-align: center;
+  text-shadow: 
+    3px 2px 0px #FFEEA5, 
+    5px 4px 0px #AA74D3, 
+    7px 6px 0px #143ED3,
+    9px 8px 0px #EF8F7F,
+    11px 10px 0px #AECC39;
 }
 
 /* ---- layout ---- */
